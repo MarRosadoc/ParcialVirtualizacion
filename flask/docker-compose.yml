@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  flask_app:
+    image: awesome-flask
+    ports:
+      - 8000:8000
+  web:
+    image: nginx
+    volumes:
+      -./html:/usr/share/nginx/html
+    ports:
+      - "80:80"
